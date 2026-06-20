@@ -41,7 +41,7 @@ function MainLayout() {
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground flex flex-col font-sans transition-colors duration-200">
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
+      <header className="border-b border-border bg-background sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-5xl">
           <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
             <div className="bg-primary/10 p-2 rounded-lg text-primary">
