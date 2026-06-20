@@ -14,7 +14,7 @@ export default function BlogPost() {
   const post = getPostBySlug(slug || "");
 
   useSeo({
-    title: post ? `${post.title} | FreelanceTax Blog` : "Post Not Found | FreelanceTax",
+    title: post ? `${post.title} | Tax For Freelancers Blog` : "Post Not Found | Tax For Freelancers",
     description: post ? post.description : "This blog post could not be found.",
     path: post ? `/blog/${post.slug}` : "/blog",
     ogType: "article"
@@ -30,12 +30,12 @@ export default function BlogPost() {
       "dateModified": post.publishedAt,
       "author": {
         "@type": "Person",
-        "name": "Muhammad Ahmed Tahir",
+        "name": "Abu Sufyan",
         "url": absoluteUrl("/about")
       },
       "publisher": {
         "@type": "Organization",
-        "name": "FreelanceTax",
+        "name": "Tax For Freelancers",
         "logo": {
           "@type": "ImageObject",
           "url": absoluteUrl("/favicon.svg")

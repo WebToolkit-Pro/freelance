@@ -47,7 +47,7 @@ function MainLayout() {
             <div className="bg-primary/10 p-2 rounded-lg text-primary">
               <Calculator className="h-5 w-5" />
             </div>
-            <span className="font-semibold tracking-tight text-lg">FreelanceTax</span>
+            <span className="font-semibold tracking-tight text-lg">Tax For Freelancers</span>
           </Link>
           
           {/* Desktop Navigation */}
@@ -84,13 +84,13 @@ function MainLayout() {
                 <div className="bg-primary/10 p-1.5 rounded-md text-primary">
                   <Calculator className="h-4 w-4" />
                 </div>
-                <span className="font-semibold tracking-tight">FreelanceTax</span>
+                <span className="font-semibold tracking-tight">Tax For Freelancers</span>
               </Link>
               <p className="text-sm text-muted-foreground">
                 Know exactly what you take home.
               </p>
               <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} FreelanceTax
+                © {new Date().getFullYear()} Tax For Freelancers
               </p>
             </div>
             

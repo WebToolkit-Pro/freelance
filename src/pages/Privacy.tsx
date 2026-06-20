@@ -4,7 +4,7 @@ import { useSeo } from "@/lib/seo";
 
 export default function Privacy() {
   useSeo({
-    title: "Privacy Policy | FreelanceTax",
+    title: "Privacy Policy | Tax For Freelancers",
     description: "How we handle your data and privacy."
   });
 
@@ -12,7 +12,7 @@ export default function Privacy() {
     <Layout title="Privacy Policy" description="Last updated: April 29, 2026">
       <h2>What data we collect</h2>
       <p>
-        FreelanceTax is a fully client-side calculator. The numbers you enter — gross amounts, fee percentages, filing status, and income — are processed entirely in your browser and are never sent to our servers. We do not require accounts, and we do not store your tax inputs.
+        Tax For Freelancers is a fully client-side calculator. The numbers you enter — gross amounts, fee percentages, filing status, and income — are processed entirely in your browser and are never sent to our servers. We do not require accounts, and we do not store your tax inputs.
       </p>
 
       <h2>Cookies and analytics</h2>

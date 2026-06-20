@@ -4,15 +4,15 @@ import { useSeo } from "@/lib/seo";
 
 export default function Terms() {
   useSeo({
-    title: "Terms of Service | FreelanceTax",
-    description: "Terms of Service and usage conditions for the FreelanceTax calculator."
+    title: "Terms of Service | Tax For Freelancers",
+    description: "Terms of Service and usage conditions for the Tax For Freelancers calculator."
   });
 
   return (
     <Layout title="Terms of Service" description="Last updated: April 29, 2026">
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By accessing and using FreelanceTax (the "Service"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this Service, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this Service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this Service.
+        By accessing and using Tax For Freelancers (the "Service"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this Service, you shall be subject to any posted guidelines or rules applicable to such services. Any participation in this Service will constitute acceptance of this agreement. If you do not agree to abide by the above, please do not use this Service.
       </p>
 
       <h2>2. Use of the Calculator</h2>

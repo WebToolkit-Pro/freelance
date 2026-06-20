@@ -54,12 +54,12 @@ export default function Home() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "FreelanceTax",
+      "name": "Tax For Freelancers",
       "url": absoluteUrl("/"),
       "description": "Free 2026 US freelance net income and self-employment tax calculator.",
       "publisher": {
         "@type": "Person",
-        "name": "Muhammad Ahmed Tahir"
+        "name": "Abu Sufyan"
       }
     },
     {

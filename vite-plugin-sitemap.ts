@@ -88,7 +88,7 @@ function buildRssXml(siteUrl: string, posts: { slug: string; publishedAt: string
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>FreelanceTax Blog</title>
+    <title>Tax For Freelancers Blog</title>
     <link>${trimmed}</link>
     <description>Guides, tips, and strategies for managing your self-employment taxes and keeping more of what you earn.</description>
     <language>en-us</language>

@@ -7,15 +7,15 @@ import { Link } from "wouter";
 
 export default function About() {
   useSeo({
-    title: "About FreelanceTax | US Freelance Net Income Calculator",
-    description: "Learn why FreelanceTax was built and how it helps freelancers estimate their true take-home pay."
+    title: "About Tax For Freelancers | US Freelance Net Income Calculator",
+    description: "Learn why Tax For Freelancers was built and how it helps freelancers estimate their true take-home pay."
   });
 
   return (
-    <Layout title="About FreelanceTax" description="Why this calculator exists and who it's for.">
+    <Layout title="About Tax For Freelancers" description="Why this calculator exists and who it's for.">
       <h2>Who built this</h2>
       <p>
-        FreelanceTax was built by Muhammad Ahmed Tahir, a developer based in Lahore, Pakistan. After years of freelancing across Upwork, Fiverr, and direct clients, I kept doing the same back-of-the-envelope math for every project — what does this $3,000 invoice actually leave me with after platform fees and US self-employment tax? I built this calculator so other freelancers wouldn't have to.
+        Tax For Freelancers was built by Abu Sufyan, a developer based in Lahore, Pakistan. After years of freelancing across Upwork, Fiverr, and direct clients, I kept doing the same back-of-the-envelope math for every project — what does this $3,000 invoice actually leave me with after platform fees and US self-employment tax? I built this calculator so other freelancers wouldn't have to.
       </p>
 
       <h2>Why this exists</h2>
@@ -23,7 +23,7 @@ export default function About() {
         Most generic tax calculators on the internet ask for a simple gross income number and spit out a basic percentage. But freelance reality is much more complicated. First, the platform takes a cut — sometimes 10%, sometimes 20%. Then, the IRS taxes you not just on income, but specifically on self-employment.
       </p>
       <p>
-        But they don't tax 100% of your net income (the 92.35% rule). And the Social Security portion caps out at a certain threshold. And you have to pay it quarterly to avoid penalties. I built FreelanceTax to model these specific, nuanced rules so you can price your services accurately and save exactly what you owe.
+        But they don't tax 100% of your net income (the 92.35% rule). And the Social Security portion caps out at a certain threshold. And you have to pay it quarterly to avoid penalties. I built Tax For Freelancers to model these specific, nuanced rules so you can price your services accurately and save exactly what you owe.
       </p>
 
       <h2>What we promise</h2>

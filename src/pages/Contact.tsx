@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   useSeo({
-    title: "Contact Us | FreelanceTax",
+    title: "Contact Us | Tax For Freelancers",
     description: "Get in touch for feedback, bug reports, or partnership inquiries."
   });
 
@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <Layout title="Contact Us" description="We'd love to hear from you.">
       <p className="mb-8">
-        Whether you found a bug, have a suggestion for improving the calculator, want to request a feature, or have a partnership inquiry, please reach out. We are constantly looking for ways to make FreelanceTax more useful for independent professionals.
+        Whether you found a bug, have a suggestion for improving the calculator, want to request a feature, or have a partnership inquiry, please reach out. We are constantly looking for ways to make Tax For Freelancers more useful for independent professionals.
       </p>
 
       <Card className="max-w-xl shadow-sm border-border bg-card">

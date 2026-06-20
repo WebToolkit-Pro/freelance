@@ -6,7 +6,7 @@ import { useSeo } from "@/lib/seo";
 
 export default function LandingPage() {
   useSeo({
-    title: "FreelanceTax | Enterprise Financial Suite for Independent Professionals",
+    title: "Tax For Freelancers | Enterprise Financial Suite for Independent Professionals",
     description: "The complete suite of tax calculators, hourly rate estimators, and financial tools built specifically for 1099 freelancers and independent contractors.",
     path: "/"
   });

@@ -58,7 +58,7 @@ export function useSeo({ title, description, path, ogType = "website", ogImage }
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:url", url);
     setMetaTag("property", "og:image", image);
-    setMetaTag("property", "og:site_name", "FreelanceTax");
+    setMetaTag("property", "og:site_name", "Tax For Freelancers");
 
     setMetaTag("name", "twitter:card", "summary_large_image");
     setMetaTag("name", "twitter:title", title);
