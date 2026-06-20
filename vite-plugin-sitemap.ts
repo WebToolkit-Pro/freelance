@@ -34,15 +34,13 @@ function todayIso(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-function parseBlogPosts(blogSourcePath: string): { slug: string; publishedAt: string }[] {
+function parseBlogPosts(blogSourcePath: string): { slug: string; publishedAt: string; title: string; description: string }[] {
   const src = fs.readFileSync(blogSourcePath, "utf-8");
-  // Match each post object with slug + publishedAt fields. Skip the type
-  // declaration (which uses `slug: string;` rather than `slug: "..."`).
-  const postRegex = /\{\s*slug:\s*"([^"]+)"[\s\S]*?publishedAt:\s*"([^"]+)"/g;
-  const posts: { slug: string; publishedAt: string }[] = [];
+  const postRegex = /\{\s*slug:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?description:\s*"([^"]+)"[\s\S]*?publishedAt:\s*"([^"]+)"/g;
+  const posts: { slug: string; publishedAt: string; title: string; description: string }[] = [];
   let match: RegExpExecArray | null;
   while ((match = postRegex.exec(src)) !== null) {
-    posts.push({ slug: match[1], publishedAt: match[2] });
+    posts.push({ slug: match[1], title: match[2], description: match[3], publishedAt: match[4] });
   }
   return posts;
 }
@@ -75,7 +73,31 @@ Sitemap: ${trimmed}/sitemap.xml
 `;
 }
 
-function generate(opts: SitemapOptions): { count: number; xml: string; robots: string } {
+function buildRssXml(siteUrl: string, posts: { slug: string; publishedAt: string; title: string; description: string }[]): string {
+  const trimmed = siteUrl.replace(/\/$/, "");
+  
+  const items = posts.map(p => `
+    <item>
+      <title><![CDATA[${p.title}]]></title>
+      <link>${trimmed}/blog/${p.slug}</link>
+      <guid>${trimmed}/blog/${p.slug}</guid>
+      <pubDate>${new Date(p.publishedAt).toUTCString()}</pubDate>
+      <description><![CDATA[${p.description}]]></description>
+    </item>`).join("");
+
+  return `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>FreelanceTax Blog</title>
+    <link>${trimmed}</link>
+    <description>Guides, tips, and strategies for managing your self-employment taxes and keeping more of what you earn.</description>
+    <language>en-us</language>
+    ${items}
+  </channel>
+</rss>`;
+}
+
+function generate(opts: SitemapOptions): { count: number; xml: string; robots: string; rss: string } {
   const today = todayIso();
   const posts = parseBlogPosts(opts.blogSourcePath);
   const blogRoutes: SitemapRoute[] = posts.map((p) => ({
@@ -90,6 +112,7 @@ function generate(opts: SitemapOptions): { count: number; xml: string; robots: s
     count: allRoutes.length,
     xml: buildSitemapXml(opts.siteUrl, allRoutes),
     robots: buildRobotsTxt(opts.siteUrl),
+    rss: buildRssXml(opts.siteUrl, posts),
   };
 }
 
@@ -98,10 +121,11 @@ export function sitemapPlugin(opts: { siteUrl: string }): Plugin {
   let resolvedPublicDir: string;
   let resolvedOutDir: string;
 
-  const writeFiles = (xml: string, robots: string, target: string) => {
+  const writeFiles = (xml: string, robots: string, rss: string, target: string) => {
     fs.mkdirSync(target, { recursive: true });
     fs.writeFileSync(path.join(target, "sitemap.xml"), xml);
     fs.writeFileSync(path.join(target, "robots.txt"), robots);
+    fs.writeFileSync(path.join(target, "rss.xml"), rss);
   };
 
   return {
@@ -121,9 +145,9 @@ export function sitemapPlugin(opts: { siteUrl: string }): Plugin {
         outDir: resolvedOutDir,
       });
       // Write to build output so deploy serves fresh files
-      writeFiles(result.xml, result.robots, resolvedOutDir);
+      writeFiles(result.xml, result.robots, result.rss, resolvedOutDir);
       // Also refresh the source public/ copy so dev preview & git stay in sync
-      writeFiles(result.xml, result.robots, resolvedPublicDir);
+      writeFiles(result.xml, result.robots, result.rss, resolvedPublicDir);
       // eslint-disable-next-line no-console
       console.log(`[sitemap] generated ${result.count} URLs for ${opts.siteUrl}`);
     },
