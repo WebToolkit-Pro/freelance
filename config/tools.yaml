@@ -1,0 +1,30 @@
+tools:
+  - id: 1099-tax-calculator
+    title: 1099 Tax Calculator 2026
+    slug: 1099-tax-calculator
+    category: finance
+    description: Estimate your 2026 self-employment taxes, Social Security, Medicare, and federal income tax.
+
+  - id: upwork-fee-and-tax-calculator
+    title: Upwork Tax & Profit Calculator 2026
+    slug: upwork-fee-and-tax-calculator
+    category: finance
+    description: Calculate take-home pay after Upwork sliding scale fees and 2026 federal self-employment tax.
+
+  - id: fiverr-fee-and-tax-calculator
+    title: Fiverr Tax & Profit Calculator 2026
+    slug: fiverr-fee-and-tax-calculator
+    category: finance
+    description: Calculate your net profit on Fiverr after the standard 20% fee and 2026 federal self-employment taxes.
+
+  - id: freelance-hourly-rate-calculator
+    title: Freelance Hourly Rate Calculator
+    slug: freelance-hourly-rate-calculator
+    category: finance
+    description: Determine your ideal freelance hourly rate based on target income and business expenses.
+
+  - id: w2-vs-1099-calculator
+    title: W-2 vs 1099 Calculator
+    slug: w2-vs-1099-calculator
+    category: finance
+    description: Compare traditional W-2 employment salary against 1099 freelance income to see which yields higher net pay.

@@ -19,7 +19,9 @@ function useScrollToTop() {
 
 // Pages
 import LandingPage from "@/pages/LandingPage";
-import Home from "@/pages/Home";
+import Generic1099ToolLayout from "@/components/tools/layouts/Generic1099ToolLayout";
+import UpworkToolLayout from "@/components/tools/layouts/UpworkToolLayout";
+import FiverrToolLayout from "@/components/tools/layouts/FiverrToolLayout";
 import RateCalculator from "@/pages/tools/RateCalculator";
 import W2vs1099 from "@/pages/tools/W2vs1099";
 import About from "@/pages/About";
@@ -62,9 +64,9 @@ function MainLayout() {
 
       <Switch>
         <Route path="/" component={LandingPage} />
-        <Route path="/tools/1099-tax-calculator" component={Home} />
-        <Route path="/tools/upwork-fee-and-tax-calculator" component={Home} />
-        <Route path="/tools/fiverr-fee-and-tax-calculator" component={Home} />
+        <Route path="/tools/1099-tax-calculator" component={Generic1099ToolLayout} />
+        <Route path="/tools/upwork-fee-and-tax-calculator" component={UpworkToolLayout} />
+        <Route path="/tools/fiverr-fee-and-tax-calculator" component={FiverrToolLayout} />
         <Route path="/tools/w2-vs-1099-calculator" component={W2vs1099} />
         <Route path="/tools/freelance-hourly-rate-calculator" component={RateCalculator} />
         <Route path="/about" component={About} />
